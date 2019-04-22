@@ -1,0 +1,125 @@
+.outer {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #000;
+      }
+      
+      .texteffect {
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+      }
+      
+      @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+        100% {
+          background-position: 500%;
+        }
+      }
+      section{
+        height: 10px;
+        width: 2px;
+        padding: 10px;
+        position: fixed;
+        padding: 0px 271px 0px;
+        margin-top: 101px;  
+        background-color: red;
+    }
+    #id{
+        height: 100px;
+        width: 300px;
+        padding-bottom: 40px;
+        background-color: yellow;
+    }
+   
+      html {
+        height: 100%;
+      }
+      
+      .avatar {
+        height: 200px;
+        position: relative;
+        width: 200px;
+      }
+      .aleft{
+        right: 50px;
+      }
+      
+      .avatar img {
+        border-radius: 9999px;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+      }
+      
+      @keyframes cycle-colors {
+        0% { border-color: hsl(0, 100%, 50%); }
+        25% { border-color: hsl(90, 100%, 50%); }
+        50% { border-color: hsl(180, 100%, 50%); }
+        75% { border-color: hsl(270, 100%, 50%); }
+        100% { border-color: hsl(360, 100%, 50%); }
+      }
+      
+      @keyframes pulse {
+        to {
+          opacity: 0;
+          transform: scale(1);
+        }
+      }
+      
+      .avatar::before,
+      .avatar::after {
+        animation: pulse 2s linear infinite;
+        border: #fff solid 8px;
+        border-radius: 9999px;
+        box-sizing: border-box;
+        content: ' ';
+        height: 140%;
+        left: -20%;
+        opacity: .6;
+        position: absolute;
+        top: -20%;
+        transform: scale(0.714);
+        width: 140%;
+        z-index: 1;
+      }
+      
+      .avatar::after {
+        animation-delay: 1s;
+      }
+      
+      .avatar:hover img {
+        content: url('http://s.blixt.org/hypnotoad.jpg');
+      }
+      
+      .avatar:hover::before,
+      .avatar:hover::after {
+        animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+      }
+      
+      .avatar:hover::after {
+        animation-delay: .5s;
+      }
+      .text-center{
+          text-align: center;
+          color: white;
+      }
+      body{
+          background-color: black;
+      }
